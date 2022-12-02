@@ -1,13 +1,17 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-<h3>Task Form</h3>
-<a href="{% url 'tasks' %}"> Go Back</a>
-<form method = "POST" action = "">
+
+<h1>Register</h1>
+
+<form method = "POST">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Submit">
+    <input type="submit" value="Register">
 </form>
+
+
+<p> Already have an account? <a href="{% url 'register' %}">Login</a></p>
 {% comment %} {% extends 'base/main.html' %} {% endcomment %}
 
 {% endblock content %}
